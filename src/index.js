@@ -14,3 +14,11 @@ async function updateDailyImage() {
     imageElement.alt = title;
     imageTitleElement.textContent = title;
 }
+
+function toggleBurgerState() {
+    console.log("i was clicked");
+    const burgerBtn = document.getElementById('burger-nav');
+    burgerBtn.classList.toggle('active');
+}
+
+document.getElementById('burger-button').onclick = () => toggleBurgerState();

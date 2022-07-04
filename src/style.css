@@ -8,3 +8,58 @@ img {
     display: grid;
     justify-content: center;
 }
+
+.burger {
+    --menu-width: 24px;
+    --menu-color: hotpink;
+    --menu-item-color: red;
+    --menu-item-hover-color: blue;
+    --animation-speed: .5s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.burger.active {
+    --menu-width: 200px;
+}
+
+.burger button {
+    justify-content: flex-end;
+    border: none;
+    padding: 12px;
+    background-color: var(--menu-color);
+}
+
+.burger ul {
+    transform: translateX(-200px);
+    transition: transform var(--animation-speed);
+    transition: width var(--animation-speed);
+    display: block;
+    background-color: var(--menu-color);
+    padding: 24px 0;
+    width: var(--menu-width);
+}
+
+.burger.active ul {
+    transform: translateX(0);
+    transition: transform var(--animation-speed);
+}
+
+.burger li {
+    padding-bottom: 12px;
+    background-color: var(--menu-item-color);
+    padding: 8px 24px;
+}
+
+.burger li:hover {
+    background-color: var(--menu-item-hover-color);
+}
+
+.burger a {
+    text-decoration: none;
+    color: #000;
+}
